@@ -1,12 +1,3 @@
-import SidebarLayout from "./layouts/SidebarLayout";
-import Dashboard from "./pages/Dashboard";
-
-function App() {
-  return (
-    <SidebarLayout>
-      <Dashboard />
-    </SidebarLayout>
-  );
-}
+function App() {}
 
 export default App;
