@@ -3,24 +3,22 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { AuthContext, useAuth } from "../context/AuthContext";
+import { useContext } from "react";
 
 const schema = z.object({
   email: z.string().email("Invalid email"),
   password: z.string().min(6, "Minimum 6 characters"),
 });
-
 const Login = () => {
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: zodResolver(schema) });
 
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     toast.success("You have successfully login");
-    localStorage.setItem("toke", "fake-token");
-    navigate("/dashboard");
   };
   return (
     <div className="flex items-center justify-center bg-green-50 h-screen">
