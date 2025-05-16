@@ -13,9 +13,11 @@ import { AuthProvider } from "./context/AuthContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <AuthProvider></AuthProvider>
-    </RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
+    </AuthProvider>
     <ToastContainer position="top-right" autoClose={2000} />
   </React.StrictMode>
 );

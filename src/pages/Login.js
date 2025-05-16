@@ -11,6 +11,9 @@ const schema = z.object({
   password: z.string().min(6, "Minimum 6 characters"),
 });
 const Login = () => {
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -19,6 +22,8 @@ const Login = () => {
 
   const onSubmit = (data) => {
     toast.success("You have successfully login");
+    login({ email: data.email });
+    navigate("/dashboard");
   };
   return (
     <div className="flex items-center justify-center bg-green-50 h-screen">
