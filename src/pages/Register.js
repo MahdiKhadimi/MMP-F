@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const schema = z
   .object({
@@ -18,6 +20,12 @@ const schema = z
 
 const Register = () => {
   const navigate = useNavigate();
+  const { isAuthenticated } = useContext(AuthContext);
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/dashboard");
+    }
+  }, [isAuthenticated]);
   const {
     register,
     handleSubmit,

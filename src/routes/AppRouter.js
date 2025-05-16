@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import SidebarLayout from "../layouts/SidebarLayout";
 import Loans from "../pages/Loans";
 import Profile from "../pages/Profile";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -17,19 +18,25 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <SidebarLayout />,
+    element: <ProtectedRoute />,
     children: [
       {
-        path: "dashboard",
-        element: <Dashboard />,
-      },
-      {
-        path: "loans",
-        element: <Loans />,
-      },
-      {
-        path: "profile",
-        element: <Profile />,
+        path: "/",
+        element: <SidebarLayout />,
+        children: [
+          {
+            path: "dashboard",
+            element: <Dashboard />,
+          },
+          {
+            path: "loans",
+            element: <Loans />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
       },
     ],
   },
