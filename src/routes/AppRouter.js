@@ -6,6 +6,7 @@ import SidebarLayout from "../layouts/SidebarLayout";
 import Loans from "../pages/Loans";
 import Profile from "../pages/Profile";
 import ProtectedRoute from "../components/ProtectedRoute";
+import LoanApplicationForm from "../pages/LoanApplicationForm";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
           {
             path: "profile",
             element: <Profile />,
+          },
+          {
+            path: "apply",
+            element: <LoanApplicationForm />,
           },
         ],
       },

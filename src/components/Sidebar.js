@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import { FaHome, FaMoneyCheckAlt, FaUser } from "react-icons/fa";
+import {
+  FaHome,
+  FaMoneyBillAlt,
+  FaMoneyBillWave,
+  FaMoneyCheckAlt,
+  FaPiggyBank,
+  FaUser,
+} from "react-icons/fa";
 
 export default function Sidebar() {
   return (
@@ -12,22 +19,30 @@ export default function Sidebar() {
           to="/dashboard"
           className="flex items-center gap-2 p-2 hover:bg-blue-100 rounded"
         >
-          <FaHome />
-          Dashboard
+          <FaHome className="w-5 h-5 mr-2 text-blue-900" />
+          <span>Dashboard</span>
         </Link>
         <Link
           to="/loans"
           className="flex items-center gap-2 p-2 hover:bg-blue-100 rounded"
         >
-          <FaMoneyCheckAlt />
-          Loans
+          <FaMoneyCheckAlt className="w-5 h-5 mr-2 text-blue-900" />
+          <span>Loans</span>
         </Link>
         <Link
           to="/profile"
           className="flex items-center gap-2 p-2 hover:bg-blue-100 rounded"
         >
-          <FaUser />
-          Profile
+          <FaUser className="w-5 h-5 mr-2 text-blue-900" />
+          <span>Profile</span>
+        </Link>
+
+        <Link
+          to="/apply"
+          className="flex items-center gap-2 p-2 hover:bg-blue-100 rounded"
+        >
+          <FaMoneyBillAlt className="w-5 h-5 mr-2 text-blue-900" />
+          <span>Apply for Loan</span>
         </Link>
       </nav>
     </div>
