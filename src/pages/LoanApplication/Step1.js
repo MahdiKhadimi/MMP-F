@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useLoanForm } from "../../context/LoanFormContext";
 
 const Step1 = () => {
-  const { formData, setFormData } = useLoanForm();
+  const { formData, setFormData, step, setStep } = useLoanForm();
   const {
     register,
     handleSubmit,
@@ -13,6 +13,7 @@ const Step1 = () => {
 
   const formSubmitHanlder = (data) => {
     setFormData({ ...formData, ...data });
+    setStep(2);
   };
   return (
     <form className="space-y-4" onSubmit={handleSubmit(formSubmitHanlder)}>

@@ -7,6 +7,7 @@ import { RouterProvider } from "react-router-dom";
 import router from "./routes/AppRouter";
 import { ToastContainer } from "react-toastify";
 import { AuthProvider } from "./context/AuthContext";
+import { LoanFormProvider } from "./context/LoanFormContext";
 
 // Hide server validation error from console
 
@@ -14,9 +15,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router}>
-        <App />
-      </RouterProvider>
+      <LoanFormProvider>
+        <RouterProvider router={router}>
+          <App />
+        </RouterProvider>
+      </LoanFormProvider>
     </AuthProvider>
     <ToastContainer position="top-right" autoClose={2000} />
   </React.StrictMode>
