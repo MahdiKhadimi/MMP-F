@@ -17,6 +17,11 @@ export const LoanFormProvider = ({ children }) => {
     purpose: "",
     term: 12,
     repaymentFrequency: "",
+
+    // step 3
+    income: "",
+    dependents: "",
+    expense: "",
   });
   const [step, setStep] = useState(1);
   return (
