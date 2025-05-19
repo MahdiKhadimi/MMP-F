@@ -30,7 +30,9 @@ const Step2 = () => {
 
       {/* Amount */}
       <div>
-        <label className="block mb-1 font-sm">Loan Amount (AFN)</label>
+        <label className="block mb-1 text-sm text-gray-600">
+          Loan Amount (AFN)
+        </label>
         <input
           type="number"
           {...register("amount", {
@@ -45,7 +47,7 @@ const Step2 = () => {
       </div>
       {/* Purpose */}
       <div>
-        <label className="block mb-1 font-sm">Loan Purpose</label>
+        <label className="block mb-1 text-sm text-gray-600">Loan Purpose</label>
         <select
           {...register("purpose", { required: "Purpose is required" })}
           className="w-full p-2 border rounded-md"
@@ -64,7 +66,9 @@ const Step2 = () => {
 
       {/* Term */}
       <div>
-        <label className="block mb-1 font-sm">Loan Term (months)</label>
+        <label className="block mb-1 text-sm text-gray-600">
+          Loan Term (months)
+        </label>
         <input
           type="range"
           min={1}
@@ -73,11 +77,13 @@ const Step2 = () => {
           defaultValue={formData.term}
           className="w-full"
         />
-        <p className="text-sm text-gray-600 mt-1">{formData.term} months</p>
+        <p className="text-sm text-green-800 mt-1">{formData.term} months</p>
       </div>
       {/* Repayment Frequency */}
       <div>
-        <label className="block mb-1 font-medium">Repayment Frequency</label>
+        <label className="block mb-1 text-sm text-gray-600">
+          Repayment Frequency
+        </label>
         <select
           {...register("repaymentFrequency", {
             required: "Repayment frequency is required",
