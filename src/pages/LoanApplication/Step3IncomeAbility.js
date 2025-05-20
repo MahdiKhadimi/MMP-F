@@ -17,7 +17,7 @@ const Step3IncomeAbility = () => {
 
   const formSubmitHandler = (data) => {
     setFormData({ ...formData, ...data });
-    setStep(3);
+    setStep(4);
   };
   return (
     <form className="space-y-6 " onSubmit={handleSubmit(formSubmitHandler)}>

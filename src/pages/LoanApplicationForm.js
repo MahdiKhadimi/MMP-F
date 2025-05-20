@@ -3,6 +3,7 @@ import { LoanFormProvider, useLoanForm } from "../context/LoanFormContext";
 import Step1 from "./LoanApplication/Step1";
 import Step2 from "./LoanApplication/Step2";
 import Step3IncomeAbility from "./LoanApplication/Step3IncomeAbility";
+import Step4Confirm from "./LoanApplication/Step4Confirm";
 
 const LoanApplicationForm = () => {
   const { formData, setFormData, step, setStep } = useLoanForm();
@@ -11,6 +12,7 @@ const LoanApplicationForm = () => {
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       {step === 3 && <Step3IncomeAbility />}
+      {step === 4 && <Step4Confirm />}
     </div>
   );
 };
