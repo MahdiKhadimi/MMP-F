@@ -1,15 +1,15 @@
 import { toast } from "react-toastify";
 import { useLoanForm } from "../../context/LoanFormContext";
+import { saveLoanApplication } from "../../services/LoanService";
 
 const Step4Confirm = () => {
-  const { formData, setFormData, setStep } = useLoanForm();
+  const { formData, setFormData, setStep, resetForm } = useLoanForm();
 
   const handleSubmit = () => {
-    const applications = JSON.parse(localStorage.getItem("applications")) || [];
-    applications.push({ ...formData, id: Date.now(), status: "pending" });
-    localStorage.setItem("applications", JSON.stringify(applications));
-
+    saveLoanApplication(formData);
     toast.success("Loan application submmitted!");
+    resetForm();
+
     setFormData({
       // step 1
       fullName: "",

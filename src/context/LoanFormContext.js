@@ -24,8 +24,16 @@ export const LoanFormProvider = ({ children }) => {
     expense: "",
   });
   const [step, setStep] = useState(1);
+
+  const resetForm = () => {
+    setFormData({});
+    setStep(1);
+  };
+
   return (
-    <LoanFormContext.Provider value={{ formData, setFormData, step, setStep }}>
+    <LoanFormContext.Provider
+      value={{ formData, setFormData, step, setStep, resetForm }}
+    >
       {children}
     </LoanFormContext.Provider>
   );
