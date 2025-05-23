@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { getAllLoans } from "../services/LoanService";
+import LoanDetailModal from "../components/LoanDetailModal";
 
 const Dashboard = () => {
   const [loans, setLoan] = useState([]);
+  const [selectedLoan, setSelectedLoan] = useState(null);
   useEffect(() => {
     setLoan(getAllLoans);
   }, []);
@@ -19,6 +21,7 @@ const Dashboard = () => {
               <th className="px-4 py-2 border">Purpose</th>
               <th className="px-4 py-2 border">Term</th>
               <th className="px-4 py-2 border">Status</th>
+              <th className="px-4 py-2 border">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -41,11 +44,25 @@ const Dashboard = () => {
                     {loan.status}
                   </span>
                 </td>
+                <td className="p-3 text-center">
+                  <button
+                    onClick={() => setSelectedLoan(loan)}
+                    className="text-blue-600 underline"
+                  >
+                    View
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {selectedLoan && (
+        <LoanDetailModal
+          loan={selectedLoan}
+          onClose={() => setSelectedLoan(null)}
+        />
+      )}
     </div>
   );
 };
