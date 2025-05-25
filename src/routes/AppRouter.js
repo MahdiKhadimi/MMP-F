@@ -7,6 +7,7 @@ import Loans from "../pages/Loans";
 import Profile from "../pages/Profile";
 import ProtectedRoute from "../components/ProtectedRoute";
 import LoanApplicationForm from "../pages/LoanApplicationForm";
+import AdminDashboard from "../pages/AdminDashboard";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
           {
             path: "apply",
             element: <LoanApplicationForm />,
+          },
+          {
+            path: "admin",
+            element: <AdminDashboard />,
           },
         ],
       },

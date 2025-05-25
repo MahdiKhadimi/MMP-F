@@ -7,7 +7,12 @@ export const saveLoanApplication = (application) => {
   const current = getAllLoans();
   const updated = [
     ...current,
-    { ...application, id: Date.now(), status: "pending" },
+    {
+      ...application,
+      id: Date.now(),
+      status: "pending",
+      createdAt: new Date().toISOString(),
+    },
   ];
   localStorage.setItem("applications", JSON.stringify(updated));
 };
