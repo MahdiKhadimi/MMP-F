@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getAllLoans } from "../services/LoanService";
+import { getAllLoans, updateLoanStatus } from "../services/LoanService";
+import { toast } from "react-toastify";
 
 const AdminDashboard = () => {
   const [loans, setLoans] = useState([]);
@@ -21,6 +22,15 @@ const AdminDashboard = () => {
       return new Date(b.createdAt) - new Date(a.createdAts);
     }
   });
+
+  const handleStatusChange = (id, status) => {
+    const updated = updateLoanStatus(id, status);
+    toast.success(
+      `The has been ${status === "rejected" ? "Reacted" : "Accepted"}`
+    );
+
+    setLoans(updated);
+  };
 
   return (
     <div className="p-4">
@@ -57,6 +67,7 @@ const AdminDashboard = () => {
               <th className="p-2 border">Term</th>
               <th className="p-2 border">Status</th>
               <th className="p-2 border">Date</th>
+              <th className="p-2 border">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -79,6 +90,27 @@ const AdminDashboard = () => {
                   </span>
                 </td>
                 <td className="border p-2">{loan.createdAt?.slice(0, 10)}</td>
+                <td className="border p-2 flex gap-2">
+                  {loan.status === "pending" && (
+                    <>
+                      <button
+                        onClick={() => handleStatusChange(loan.id, "approved")}
+                        className="bg-green-500 text-white px-2 py-1 rounded text-sm"
+                      >
+                        Approve
+                      </button>
+                      <button
+                        onClick={() => handleStatusChange(loan.id, "rejected")}
+                        className="bg-red-500 text-white px-2 py-1 rounded text-sm"
+                      >
+                        Reject
+                      </button>
+                    </>
+                  )}
+                  {loan.status !== "pending" && (
+                    <span className="text-gray-400 italic">No actions</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

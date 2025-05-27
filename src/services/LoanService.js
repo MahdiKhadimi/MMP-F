@@ -19,8 +19,10 @@ export const saveLoanApplication = (application) => {
 
 export const updateLoanStatus = (id, status) => {
   const loans = getAllLoans();
+
   const updated = loans.map((loan) => {
-    return loan.id === id ? { ...loan, status } : loan;
+    return loan.id === id ? { ...loan, status: status } : loan;
   });
-  localStorage.setItem("applications", updated);
+  localStorage.setItem("applications", JSON.stringify(updated));
+  return updated;
 };
