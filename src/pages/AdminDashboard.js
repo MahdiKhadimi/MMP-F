@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { getAllLoans, updateLoanStatus } from "../services/LoanService";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+import RepaimentSechdule from "../components/RepaimentSchedule";
+import { FaLeaf } from "react-icons/fa";
 
 const AdminDashboard = () => {
   const [loans, setLoans] = useState([]);
   const [filter, setFilter] = useState("all");
   const [sortKey, setSortKey] = useState(null);
+  const [loanId, setLoanId] = useState(null);
+  const [showRepayment, setShowRepayment] = useState(null);
 
   useEffect(() => {
     setLoans(getAllLoans());
@@ -15,6 +20,11 @@ const AdminDashboard = () => {
     return filter === "all" ? true : loan.status === filter;
   });
 
+  const loanDetails = loans.filter((loan) => {
+    return loan.id === loanId;
+  });
+
+  console.log(loanDetails);
   const sortedData = [...filteredLoans].sort((a, b) => {
     if (sortKey === "amount") {
       return b.amount - a.amount;
@@ -30,6 +40,16 @@ const AdminDashboard = () => {
     );
 
     setLoans(updated);
+  };
+
+  const modalCloseHandler = () => {
+    setShowRepayment(false);
+  };
+
+  const handleRepayment = (id) => {
+    setLoanId(id);
+
+    setShowRepayment(true);
   };
 
   return (
@@ -107,14 +127,24 @@ const AdminDashboard = () => {
                       </button>
                     </>
                   )}
-                  {loan.status !== "pending" && (
-                    <span className="text-gray-400 italic">No actions</span>
-                  )}
+
+                  <button
+                    onClick={handleRepayment.bind(this, loan.id)}
+                    className="bg-slate-600 text-white px-2 py-1 rounded text-sm"
+                  >
+                    Repayment
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {showRepayment && (
+          <RepaimentSechdule
+            amount={loanDetails.amount}
+            onClose={modalCloseHandler}
+          />
+        )}
       </div>
     </div>
   );
