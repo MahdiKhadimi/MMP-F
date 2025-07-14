@@ -6,8 +6,8 @@ import { useState } from "react";
 const SidebarLayout = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex h-screen bg-gray-100">
-      <div className="md:hidden p-2">
+    <div className="flex h-screen bg-gray-100  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <div className="md:hidden p-2  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <button
           onClick={() => {
             setOpen(!open);
@@ -17,7 +17,7 @@ const SidebarLayout = () => {
         </button>
       </div>
       <aside
-        className={`bg-white border-r  shadow-sm fixed inset-y-0 left-0 transform ${
+        className={` dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-r  shadow-sm fixed inset-y-0 left-0 transform ${
           open ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 transition-transform duration-200 w-64`}
       >

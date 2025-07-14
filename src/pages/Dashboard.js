@@ -18,7 +18,7 @@ const Dashboard = () => {
         {loans.map((loan) => (
           <div
             key={loan.id}
-            className="border border-gray-200 rounded-lg shadow-sm bg-white"
+            className="border border-gray-200 rounded-lg shadow-sm  dark:bg-gray-900 text-gray-900 dark:text-gray-100"
           >
             <div
               onClick={() => {

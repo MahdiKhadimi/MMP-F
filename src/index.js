@@ -8,19 +8,22 @@ import router from "./routes/AppRouter";
 import { ToastContainer } from "react-toastify";
 import { AuthProvider } from "./context/AuthContext";
 import { LoanFormProvider } from "./context/LoanFormContext";
+import { ThemeProvider } from "./context/ThemeContext";
 
 // Hide server validation error from console
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <LoanFormProvider>
-        <RouterProvider router={router}>
-          <App />
-        </RouterProvider>
-      </LoanFormProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <LoanFormProvider>
+          <RouterProvider router={router}>
+            <App />
+          </RouterProvider>
+        </LoanFormProvider>
+      </AuthProvider>
+    </ThemeProvider>
     <ToastContainer position="top-right" autoClose={2000} />
   </React.StrictMode>
 );

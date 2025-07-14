@@ -53,11 +53,13 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Admin Dashboard</h2>
-      <div className="flex gap-4 mb-2">
+    <div className="p-4  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <h2 className="text-xl font-bold mb-4  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+        Admin Dashboard
+      </h2>
+      <div className="flex gap-4 mb-2  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <select
-          className="border p-2 rounded"
+          className="border p-2 rounded  dark:bg-gray-900 text-gray-900 dark:text-gray-100"
           onChange={(e) => {
             setFilter(e.target.value);
           }}
@@ -68,7 +70,7 @@ const AdminDashboard = () => {
           <option value="rejected">Rejected</option>
         </select>
         <select
-          className="p-2 rounded border"
+          className="p-2 rounded border  dark:bg-gray-900 text-gray-900 dark:text-gray-100"
           onChange={(e) => {
             setSortKey(e.target.value);
           }}
@@ -78,10 +80,10 @@ const AdminDashboard = () => {
         </select>
       </div>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto ">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="">
               <th className="p-2 border">Applicant</th>
               <th className="p-2 border">Amount</th>
               <th className="p-2 border">Term</th>
