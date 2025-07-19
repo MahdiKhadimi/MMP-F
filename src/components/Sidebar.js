@@ -10,7 +10,7 @@ import {
 
 export default function Sidebar() {
   return (
-    <div className="w-64  dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-r shadow-sm hidden md:block">
+    <div className="w-64 dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-r shadow-sm">
       <div className="text-xl font-bold text-center py-5 text-blue-600">
         Microloan
       </div>

@@ -94,7 +94,10 @@ const AdminDashboard = () => {
           </thead>
           <tbody>
             {sortedData.map((loan) => (
-              <tr key={loan.id} className="p-2 border-t">
+              <tr
+                key={loan.id}
+                className="p-2 border-t transition-all duration-300 "
+              >
                 <td className="border p-2">{loan.fullName}</td>
                 <td className="border p-2">{loan.amount} AFN</td>
                 <td className="border p-2">{loan.term} months</td>
