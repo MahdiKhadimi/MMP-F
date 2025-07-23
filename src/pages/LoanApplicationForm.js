@@ -8,7 +8,7 @@ import Step4Confirm from "./LoanApplication/Step4Confirm";
 const LoanApplicationForm = () => {
   const { formData, setFormData, step, setStep } = useLoanForm();
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow rounded">
+    <div className="max-w-2xl mx-auto p-6 bg-white shadow rounded dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       {step === 3 && <Step3IncomeAbility />}

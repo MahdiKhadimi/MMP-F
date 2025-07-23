@@ -12,7 +12,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="p-4">
+    <div className="p-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <h1 className="text-xl font-bold mb-4">My Loan Applications</h1>
       <div className="space-y-4">
         {loans.map((loan) => (

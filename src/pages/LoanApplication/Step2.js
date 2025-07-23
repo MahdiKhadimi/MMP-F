@@ -25,7 +25,7 @@ const Step2 = () => {
   };
 
   return (
-    <form className="space-y-6 " onSubmit={handleSubmit(formSubmitHandler)}>
+    <form className="space-y-6 dark:bg-gray-900 text-gray-900 dark:text-gray-100" onSubmit={handleSubmit(formSubmitHandler)}>
       <h2 className="text-xl font-semibold">Loan Details</h2>
 
       {/* Amount */}

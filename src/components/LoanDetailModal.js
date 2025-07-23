@@ -8,37 +8,37 @@ const LoanDetailModal = ({ loan, onClose }) => {
       onClose={onClose}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/30"
     >
-      <div className="bg-white p-6 rounded-lg w-full max-w-md shadow-lg">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-semibold">Loan Details</h2>
-          <button onClick={onClose}>
+      <div className="bg-white p-6 rounded-lg w-full max-w-md shadow-lg dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+        <div className="flex justify-between items-center mb-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+          <h2 className="text-lg font-semibold dark:bg-gray-900 text-gray-900 dark:text-gray-100">Loan Details</h2>
+          <button onClick={onClose} className="dark:bg-gray-900 text-gray-900 dark:text-gray-100">
             <FaTimes />
           </button>
         </div>
-        <div className="space-y-2 text-sm">
+        <div className="space-y-2 text-sm dark:bg-gray-900 text-gray-900 dark:text-gray-100">
           <p>
-            <strong>Full Name:</strong> {loan.fullName}
+            <strong className="dark:bg-gray-900 text-gray-900 dark:text-gray-100">Full Name:</strong> {loan.fullName}
           </p>
           <p>
-            <strong>Phone:</strong> {loan.phone}
+            <strong className="dark:bg-gray-900 text-gray-900 dark:text-gray-100">Phone:</strong> {loan.phone}
           </p>
           <p>
-            <strong>Amount:</strong> {loan.amount} AFN
+            <strong className="dark:bg-gray-900 text-gray-900 dark:text-gray-100">Amount:</strong> {loan.amount} AFN
           </p>
           <p>
-            <strong>Purpose:</strong> {loan.purpose}
+            <strong className="dark:bg-gray-900 text-gray-900 dark:text-gray-100">Purpose:</strong> {loan.purpose}
           </p>
           <p>
-            <strong>Term:</strong> {loan.term} months
+            <strong className="dark:bg-gray-900 text-gray-900 dark:text-gray-100">Term:</strong> {loan.term} months
           </p>
           <p>
-            <strong>Income:</strong> {loan.monthlyIncome} AFN
+            <strong className="dark:bg-gray-900 text-gray-900 dark:text-gray-100">Income:</strong> {loan.monthlyIncome} AFN
           </p>
           <p>
-            <strong>Dependents:</strong> {loan.dependents}
+            <strong className="dark:bg-gray-900 text-gray-900 dark:text-gray-100">Dependents:</strong> {loan.dependents}
           </p>
           <p>
-            <strong>Status:</strong> {loan.status}
+            <strong className="dark:bg-gray-900 text-gray-900 dark:text-gray-100">Status:</strong> {loan.status}
           </p>
         </div>
       </div>

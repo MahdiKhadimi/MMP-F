@@ -37,7 +37,7 @@ const Register = () => {
     navigate("/login");
   };
   return (
-    <div className="flex items-center justify-center h-screen bg-green-50">
+    <div className="flex items-center justify-center h-screen bg-green-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="shadow rounded p-6 w-full max-w-md bg-white"

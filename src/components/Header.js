@@ -15,19 +15,19 @@ export default function Header() {
     navigate("/login");
   };
   return (
-    <div className=" dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow px-4 py-3 flex justify-between items-center">
-      <h1 className="text-lg font-semibold text-gray-700">Dashboard</h1>
-      <div className="flex items-center gap-4">
-        <span className="text-sm text-gray-600">{user?.email}</span>
+    <div className="dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow px-4 py-3 flex justify-between items-center">
+      <h1 className="text-lg font-semibold text-gray-700 dark:bg-gray-900 text-gray-900 dark:text-gray-100">Dashboard</h1>
+      <div className="flex items-center gap-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+        <span className="text-sm text-gray-600 dark:bg-gray-900 text-gray-900 dark:text-gray-100">{user?.email}</span>
         <button
           onClick={logoutHanlder}
-          className="text-red-600 hover:underline"
+          className="text-red-600 hover:underline dark:bg-gray-900 text-gray-900 dark:text-gray-100"
         >
           Logout
         </button>
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="p-2 rounded text-xl"
+          className="p-2 rounded text-xl dark:bg-gray-900 text-gray-900 dark:text-gray-100"
         >
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>

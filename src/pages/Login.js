@@ -31,7 +31,7 @@ const Login = () => {
     navigate("/dashboard");
   };
   return (
-    <div className="flex items-center justify-center bg-green-50 h-screen">
+    <div className="flex items-center justify-center bg-green-50 h-screen dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="shodow rounded w-full max-w-md bg-white p-6"

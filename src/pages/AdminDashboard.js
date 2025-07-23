@@ -53,11 +53,11 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="p-4  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <h2 className="text-xl font-bold mb-4  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="p-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <h2 className="text-xl font-bold mb-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         Admin Dashboard
       </h2>
-      <div className="flex gap-4 mb-2  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <div className="flex gap-4 mb-2 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <select
           className="border p-2 rounded  dark:bg-gray-900 text-gray-900 dark:text-gray-100"
           onChange={(e) => {

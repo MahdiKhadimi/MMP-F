@@ -16,7 +16,7 @@ const Step1 = () => {
     setStep(2);
   };
   return (
-    <form className="space-y-4" onSubmit={handleSubmit(formSubmitHanlder)}>
+    <form className="space-y-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100" onSubmit={handleSubmit(formSubmitHanlder)}>
       <h2 className="text-xl font-semibold text-gray-700">
         Step 1: Personal Information{" "}
       </h2>
