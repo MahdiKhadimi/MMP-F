@@ -52,12 +52,13 @@ A responsive, modern, and user-friendly **Microloan Application Platform** built
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/microloan-portal.git
-cd microloan-portal
+git https://github.com/MahdiKhadimi/MMP-F.git
+
+cd MMP-F
 
 # Install dependencies
 npm install
 
 # Start the development server
-npm run dev
+npm start
 ```
