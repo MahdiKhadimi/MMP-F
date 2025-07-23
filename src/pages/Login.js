@@ -31,27 +31,27 @@ const Login = () => {
     navigate("/dashboard");
   };
   return (
-    <div className="flex items-center justify-center bg-green-50 h-screen dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="flex items-center justify-center theme-bg h-screen">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="shodow rounded w-full max-w-md bg-white p-6"
+        className="card w-full max-w-md"
       >
-        <h2 className="text-xl font-semibold mb-4">Login</h2>
+        <h2 className="text-xl font-semibold mb-4 form-label">Login</h2>
         <div className="mb-4">
-          <label>Email</label>
+          <label className="form-label">Email</label>
           <input
             {...register("email")}
-            className="w-full rounded border p-2 "
+            className="form-element w-full"
           />
           {errors.email && (
             <p className="text-red-500 text-sm">{errors.email.message}</p>
           )}
         </div>
         <div className="mb-4">
-          <label>Password</label>
+          <label className="form-label">Password</label>
           <input
             {...register("password")}
-            className="w-full rounded border p-2"
+            className="form-element w-full"
           />
           {errors.password && (
             <p className="text-red-500 text-sm">{errors.password.message}</p>
@@ -59,7 +59,7 @@ const Login = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 w-full rounded text-white py-2 hover:bg-blue-700"
+          className="bg-blue-500 w-full rounded text-white py-2 hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
         >
           Login
         </button>

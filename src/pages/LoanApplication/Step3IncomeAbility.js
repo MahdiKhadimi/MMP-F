@@ -20,16 +20,12 @@ const Step3IncomeAbility = () => {
     setStep(4);
   };
   return (
-    <form className="space-y-6 " onSubmit={handleSubmit(formSubmitHandler)}>
-      <h2 className="text-xl font-semibold">Income & Repayment Ability </h2>
-
-      {/* Monthly Income */}
+    <form className="space-y-6 theme-bg" onSubmit={handleSubmit(formSubmitHandler)}>
+      <h2 className="text-xl font-semibold form-label">Income & Repayment Ability</h2>
       <div>
-        <label className="mb-1 text-gray-600 text-sm">
-          Monthly Income (AFN)
-        </label>
+        <label className="form-label">Monthly Income (AFN)</label>
         <input
-          className="w-full p-2 border rounded-md"
+          className="form-element w-full"
           type="number"
           {...register("income", {
             required: "The income is required",
@@ -40,14 +36,10 @@ const Step3IncomeAbility = () => {
           <p className="text-red-500 text-sm ">{errors.income.message}</p>
         )}
       </div>
-
-      {/* Number of dependents */}
       <div>
-        <label className="mb-1 text-gray-600 text-sm">
-          Number of Dependents
-        </label>
+        <label className="form-label">Number of Dependents</label>
         <input
-          className="w-full p-2 border rounded-md"
+          className="form-element w-full"
           type="number"
           {...register("dependents", {
             required: "The dependents is required",
@@ -61,31 +53,31 @@ const Step3IncomeAbility = () => {
           <p className="text-red-500 text-sm ">{errors.dependents.message}</p>
         )}
       </div>
-
-      {/* Number of dependents */}
       <div>
-        <label className="mb-1 text-gray-600 text-sm">
-          Monthly Expense (optional)
-        </label>
+        <label className="form-label">Monthly Expense (AFN)</label>
         <input
-          className="w-full p-2 border rounded-md"
+          className="form-element w-full"
           type="number"
-          {...register("expense")}
+          {...register("expense", {
+            required: "The expense is required",
+            min: { value: 0, message: "Expense cannot be negative" },
+          })}
         />
+        {errors.expense && (
+          <p className="text-red-500 text-sm ">{errors.expense.message}</p>
+        )}
       </div>
-
       <div className="flex justify-between mt-6">
         <button
-          onClick={() => {
-            setStep(2);
-          }}
-          className="px-4 py-2 bg-gray-200 rounded"
+          type="button"
+          onClick={() => setStep(2)}
+          className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 focus:ring-2 focus:ring-blue-500"
         >
           Back
         </button>
         <button
           type="submit"
-          className="bg-blue-600 text-white rounded px-4 py-2"
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
         >
           Next
         </button>

@@ -37,42 +37,41 @@ const Register = () => {
     navigate("/login");
   };
   return (
-    <div className="flex items-center justify-center h-screen bg-green-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="flex items-center justify-center theme-bg h-screen">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="shadow rounded p-6 w-full max-w-md bg-white"
+        className="card w-full max-w-md"
       >
-        <h2 className="text-xl font-semibold mb-4">Register</h2>
+        <h2 className="text-xl font-semibold mb-4 form-label">Register</h2>
         <div className="mb-2">
-          <label> Name</label>
-          <input {...register("name")} className="w-full rounded border p-2" />
+          <label className="form-label">Name</label>
+          <input {...register("name")} className="form-element w-full" />
           {errors.name && (
             <p className="text-red-500 text-sm">{errors.name.message}</p>
           )}
         </div>
         <div className="mb-2">
-          <label> Email</label>
-          <input {...register("email")} className="w-full rounded border p-2" />
+          <label className="form-label">Email</label>
+          <input {...register("email")} className="form-element w-full" />
           {errors.email && (
             <p className="text-red-500">{errors.email.message}</p>
           )}
         </div>
         <div className="mb-2">
-          <label> Password</label>
+          <label className="form-label">Password</label>
           <input
             {...register("passsword")}
-            className="w-full rounded border p-2"
+            className="form-element w-full"
           />
           {errors.passsword && (
             <p className="text-red-500 text-sm">{errors.passsword.message}</p>
           )}
         </div>
-
         <div className="mb-2">
-          <label>Confirm Password</label>
+          <label className="form-label">Confirm Password</label>
           <input
             {...register("confirmPassword")}
-            className="w-full rounded border p-2"
+            className="form-element w-full"
           />
           {errors.confirmPassword && (
             <p className="text-red-500 text-sm">
@@ -82,7 +81,7 @@ const Register = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-green-600 text-white border rounded py-2 hover:bg-green-700 "
+          className="w-full bg-green-600 text-white border rounded py-2 hover:bg-green-700 focus:ring-2 focus:ring-green-500"
         >
           Register
         </button>

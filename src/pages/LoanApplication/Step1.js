@@ -16,38 +16,34 @@ const Step1 = () => {
     setStep(2);
   };
   return (
-    <form className="space-y-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100" onSubmit={handleSubmit(formSubmitHanlder)}>
-      <h2 className="text-xl font-semibold text-gray-700">
-        Step 1: Personal Information{" "}
-      </h2>
+    <form className="space-y-4 theme-bg" onSubmit={handleSubmit(formSubmitHanlder)}>
+      <h2 className="text-xl font-semibold form-label">Step 1: Personal Information </h2>
       <div>
-        <label className="block text-sm text-gray-600">Full Name</label>
+        <label className="form-label">Full Name</label>
         <input
           type="text"
           {...register("fullName", { required: "Full Name is required" })}
-          className="w-full border rounded p-2"
+          className="form-element w-full"
         />
         {errors.fullName && (
           <p className="text-red-500 text-sm">{errors.fullName.message}</p>
         )}
       </div>
-
       <div>
-        <label className="block text-sm text-gray-600">Tazkira Number</label>
+        <label className="form-label">Tazkira Number</label>
         <input
           type="text"
           {...register("tazkiraNumber", {
             required: "The Tazkira is required",
           })}
-          className="w-full border rounded p-2"
+          className="form-element w-full"
         />
         {errors.tazkiraNumber && (
           <p className="text-red-500 text-sm">{errors.tazkiraNumber.message}</p>
         )}
       </div>
-
       <div>
-        <label className="block text-sm text-gray-600">Phone Number</label>
+        <label className="form-label">Phone Number</label>
         <input
           type="text"
           {...register("phone", {
@@ -57,25 +53,24 @@ const Step1 = () => {
               message: "Enter a valid number",
             },
           })}
-          className="w-full border rounded p-2"
+          className="form-element w-full"
         />
         {errors.phone && (
           <p className="text-red-500 text-sm">{errors.phone.message}</p>
         )}
       </div>
-
       <div>
-        <label className="block text-sm text-gray-600">Email Address</label>
+        <label className="form-label">Email Address</label>
         <input
           type="email"
           {...register("email")}
-          className="w-full border rounded p-2"
+          className="form-element w-full"
         />
       </div>
       <div className="flex justify-end">
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
         >
           Next
         </button>

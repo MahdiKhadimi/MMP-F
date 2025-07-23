@@ -31,8 +31,8 @@ const Step4Confirm = () => {
     setStep(1);
   };
   return (
-    <div className="space-y-6 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <h2 className="text-xl font-semibold">Confirm Your Details</h2>
+    <div className="card space-y-6">
+      <h2 className="text-xl font-semibold form-label">Confirm Your Details</h2>
       <div className="grid gap-2 text-sm">
         <div>
           <strong>Full Name:</strong> {formData.fullName}

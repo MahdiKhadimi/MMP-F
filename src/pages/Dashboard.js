@@ -12,19 +12,19 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="p-4 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="p-4 theme-bg">
       <h1 className="text-xl font-bold mb-4">My Loan Applications</h1>
       <div className="space-y-4">
         {loans.map((loan) => (
           <div
             key={loan.id}
-            className="border border-gray-200 rounded-lg shadow-sm  dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+            className="card border border-gray-200 dark:border-gray-700"
           >
             <div
               onClick={() => {
                 setExpanded(loan.id);
               }}
-              className="cursor-pointer p-2 flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-all"
+              className="cursor-pointer p-2 flex justify-between items-center bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition-all rounded-md"
             >
               <div>
                 <p className="font-medium">
@@ -47,7 +47,7 @@ const Dashboard = () => {
               </div>
             </div>
             {expanded === loan.id && (
-              <div className="p-4 text-sm space-y-2 bg-white border-y">
+              <div className="p-4 text-sm space-y-2 border-y">
                 <p>
                   <strong>Full Name:</strong> {loan.fullName}
                 </p>
